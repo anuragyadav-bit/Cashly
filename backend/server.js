@@ -10,7 +10,10 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+app.use(cors({
+  origin: 'https://cashly-1-htfk.onrender.com', // your frontend URL
+  credentials: true, // if you're sending cookies
+}));
 // Middleware
 app.use(cors());
 app.use(express.json());
